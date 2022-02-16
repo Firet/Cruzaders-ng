@@ -7,11 +7,13 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './screens/login/login.component';
 import { HttpClientModule, HttpClientXsrfModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { HomeComponent } from './screens/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

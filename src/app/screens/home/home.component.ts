@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import jwt_decode from 'jwt-decode';
+import { ConfigurationsService } from 'src/app/services/configurations.service';
 
 @Component({
   selector: 'app-home',
@@ -9,9 +10,13 @@ import jwt_decode from 'jwt-decode';
 export class HomeComponent implements OnInit {
 
   userDecode: UserDecode = {};
-  
-  constructor() { }
-  
+
+  constructor(private configService : ConfigurationsService) { }
+
+  config(){
+    this.configService.getConfiguration().subscribe((res) => console.log(res));
+  }
+
   ngOnInit(): void {
     const idToken = localStorage.getItem('id_token') || '';
     this.userDecode = jwt_decode(idToken);

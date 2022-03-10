@@ -13,9 +13,10 @@
       <label for="login_password">Password</label>
       <input type="text" id="login_password" formControlName="password" placeholder="Password">
 
-      <button type="submit" (click)="login()">Login</button>
+      <button type="submit" (click)="login()" [disabled]="isLoading" >Login</button>
 
       <p *ngIf="wrongCredential">Password incorrect</p>
     </form>
+    <app-spinner class="loader-container" *ngIf="isLoading" ></app-spinner>
   </div>
 </div>
